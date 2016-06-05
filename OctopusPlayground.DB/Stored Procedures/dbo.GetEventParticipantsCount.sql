@@ -3,7 +3,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
-CREATE PROCEDURE [dbo].[GetEventParticipantsCount_New]
+CREATE PROCEDURE [dbo].[GetEventParticipantsCount]
 	@EventId INT
 AS
 BEGIN
