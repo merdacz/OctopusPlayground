@@ -5,7 +5,9 @@ CREATE TABLE [dbo].[Events]
 [StartDate] [datetimeoffset] NOT NULL,
 [EndDate] [datetimeoffset] NOT NULL,
 [Description] [nvarchar] (max) COLLATE Polish_CI_AS NOT NULL,
-[Limit] [int] NULL
+[Limit] [int] NULL,
+[SurveyStart] [datetimeoffset] NULL,
+[SurveyEnd] [datetimeoffset] NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Events] ADD CONSTRAINT [PK__Events__3214EC077F60ED59] PRIMARY KEY CLUSTERED  ([Id]) ON [PRIMARY]
