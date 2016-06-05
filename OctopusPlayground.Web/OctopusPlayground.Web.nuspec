@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>OctopusPlayground.Web</id>
+    <title>Octopus Playground Web tier</title>
+    <version>1.0.0</version>
+    <authors>Marcin Daczkowski</authors>
+    <owners>Marcin Daczkowski</owners>
+    <licenseUrl>http://daczkowski.net</licenseUrl>
+    <projectUrl>http://daczkowski.net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A sample project</description>
+    <releaseNotes>This release contains the following changes...</releaseNotes>
+  </metadata>
+</package>
