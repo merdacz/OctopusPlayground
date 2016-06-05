@@ -3,6 +3,8 @@
   "Deployment order": [
     {"Description":"Changes before migration script 'Covers changes to: Participants. Script created at 2016-06-06 00:18.'","Type":"Compare","Id":"2016-06-06-002101 pg auto"},
     {"Description":"Migration script 'Covers changes to: Participants. Script created at 2016-06-06 00:18.'","Type":"Migration","Id":"2016-06-06-002101 ph user"},
+    {"Description":"Changes before migration script 'Covers changes to: Events. Script created at 2016-06-06 00:31.'","Type":"Compare","Id":"2016-06-06-003203 pi auto"},
+    {"Description":"Migration script 'Covers changes to: Events. Script created at 2016-06-06 00:31.'","Type":"Migration","Id":"2016-06-06-003203 pj user"},
   ],
   "Conflict in this file?": "If there’s a conflict in this file, you probably want to keep both changes. Learn more: http://www.red-gate.com/SOC4/order-file-more-info"
 }

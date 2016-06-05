@@ -5,7 +5,7 @@ CREATE TABLE [dbo].[Events]
 [StartDate] [datetimeoffset] NOT NULL,
 [EndDate] [datetimeoffset] NOT NULL,
 [Description] [nvarchar] (max) COLLATE Polish_CI_AS NOT NULL,
-[Limit] [int] NULL,
+[Limit] [int] NOT NULL,
 [SurveyStart] [datetimeoffset] NULL,
 [SurveyEnd] [datetimeoffset] NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]

@@ -1,0 +1,13 @@
+diff --git a/Tables/dbo.Events.sql b/Tables/dbo.Events.sql
+index 68ec977..e2465b1 100644
+--- a/Tables/dbo.Events.sql
++++ b/Tables/dbo.Events.sql
+@@ -5,7 +5,7 @@
+ [StartDate] [datetimeoffset] NOT NULL,
+ [EndDate] [datetimeoffset] NOT NULL,
+ [Description] [nvarchar] (max) COLLATE Polish_CI_AS NOT NULL,
+-[Limit] [int] NULL,
++[Limit] [int] NOT NULL,
+ [SurveyStart] [datetimeoffset] NULL,
+ [SurveyEnd] [datetimeoffset] NULL
+ ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]

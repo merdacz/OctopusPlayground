@@ -1,0 +1,11 @@
+{
+  "Id": "b7a21918-eb91-4d1e-b349-d83f973abf54",
+  "Name": "Covers changes to: Events. Script created at 2016-06-06 00:31.",
+  "ObjectIds": [
+    {
+      "Name": "Events",
+      "Owner": "dbo",
+      "ObjectType": "Table"
+    }
+  ]
+}
