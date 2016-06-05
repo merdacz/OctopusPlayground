@@ -1,0 +1,123 @@
+diff --git a/RedGateDatabaseInfo.xml b/RedGateDatabaseInfo.xml
+new file mode 100644
+index 0000000..feae760
+--- /dev/null
++++ b/RedGateDatabaseInfo.xml
+@@ -0,0 +1,62 @@
++﻿<?xml version="1.0" encoding="utf-8"?>
++<DatabaseInformation Version="2">
++  <ScriptFileEncoding>UTF8</ScriptFileEncoding>
++  <DefaultCollation>Polish_CI_AS</DefaultCollation>
++  <DefaultSchema>dbo</DefaultSchema>
++  <DefaultUser>dbo</DefaultUser>
++  <DefaultFilegroup>PRIMARY</DefaultFilegroup>
++  <DatabaseVersion>10</DatabaseVersion>
++  <IsAzure>False</IsAzure>
++  <MaxDataFileSize>10485760</MaxDataFileSize>
++  <WriteToFileOptions>
++    <Prefixes>
++      <None>
++      </None>
++      <Table>Tables</Table>
++      <StoredProcedure>Stored Procedures</StoredProcedure>
++      <View>Views</View>
++      <Default>Defaults</Default>
++      <FullTextCatalog>Storage\Full Text Catalogs</FullTextCatalog>
++      <Function>Functions</Function>
++      <Role>Security\Roles</Role>
++      <Rule>Rules</Rule>
++      <User>Security\Users</User>
++      <UserDefinedType>Types\User-defined Data Types</UserDefinedType>
++      <Trigger>
++      </Trigger>
++      <DdlTrigger>Database Triggers</DdlTrigger>
++      <Assembly>Assemblies</Assembly>
++      <Synonym>Synonyms</Synonym>
++      <XmlSchemaCollection>Types\XML Schema Collections</XmlSchemaCollection>
++      <MessageType>Service Broker\Message Types</MessageType>
++      <Contract>Service Broker\Contracts</Contract>
++      <Queue>Service Broker\Queues</Queue>
++      <Service>Service Broker\Services</Service>
++      <Route>Service Broker\Routes</Route>
++      <EventNotification>Service Broker\Event Notifications</EventNotification>
++      <PartitionScheme>Storage\Partition Schemes</PartitionScheme>
++      <PartitionFunction>Storage\Partition Functions</PartitionFunction>
++      <Field>
++      </Field>
++      <Index>
++      </Index>
++      <Schema>Security\Schemas</Schema>
++      <ServiceBinding>Service Broker\Remote Service Bindings</ServiceBinding>
++      <Certificate>Security\Certificates</Certificate>
++      <SymmetricKey>Security\Symmetric Keys</SymmetricKey>
++      <AsymmetricKey>Security\Asymmetric Keys</AsymmetricKey>
++      <CheckConstraint>
++      </CheckConstraint>
++      <FullTextStoplist>Storage\Full Text Stoplists</FullTextStoplist>
++      <ExtendedProperty>Extended Properties</ExtendedProperty>
++      <Data>Data</Data>
++      <Sequence>Sequences</Sequence>
++      <SearchPropertyList>Search Property Lists</SearchPropertyList>
++      <SecurityPolicy>Security Policies</SecurityPolicy>
++    </Prefixes>
++    <DataWriteAllFilesInOneDirectory>True</DataWriteAllFilesInOneDirectory>
++  </WriteToFileOptions>
++  <DataFileSet>
++    <Count>0</Count>
++  </DataFileSet>
++</DatabaseInformation>
+\ No newline at end of file
+diff --git a/Tables/dbo.Events.sql b/Tables/dbo.Events.sql
+new file mode 100644
+index 0000000..68ec977
+--- /dev/null
++++ b/Tables/dbo.Events.sql
+@@ -0,0 +1,14 @@
++CREATE TABLE [dbo].[Events]
++(
++[Id] [int] NOT NULL IDENTITY(1, 1),
++[Name] [nvarchar] (100) COLLATE Polish_CI_AS NOT NULL,
++[StartDate] [datetimeoffset] NOT NULL,
++[EndDate] [datetimeoffset] NOT NULL,
++[Description] [nvarchar] (max) COLLATE Polish_CI_AS NOT NULL,
++[Limit] [int] NULL,
++[SurveyStart] [datetimeoffset] NULL,
++[SurveyEnd] [datetimeoffset] NULL
++) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
++GO
++ALTER TABLE [dbo].[Events] ADD CONSTRAINT [PK__Events__3214EC077F60ED59] PRIMARY KEY CLUSTERED  ([Id]) ON [PRIMARY]
++GO
+diff --git a/Tables/dbo.Members.sql b/Tables/dbo.Members.sql
+new file mode 100644
+index 0000000..b611038
+--- /dev/null
++++ b/Tables/dbo.Members.sql
+@@ -0,0 +1,10 @@
++CREATE TABLE [dbo].[Members]
++(
++[Id] [int] NOT NULL IDENTITY(1, 1),
++[FirstName] [nchar] (50) COLLATE Polish_CI_AS NOT NULL,
++[LastName] [nchar] (50) COLLATE Polish_CI_AS NOT NULL,
++[JoinedOn] [datetimeoffset] NOT NULL
++) ON [PRIMARY]
++GO
++ALTER TABLE [dbo].[Members] ADD CONSTRAINT [PK__Members__3214EC0703317E3D] PRIMARY KEY CLUSTERED  ([Id]) ON [PRIMARY]
++GO
+diff --git a/Tables/dbo.Participants.sql b/Tables/dbo.Participants.sql
+new file mode 100644
+index 0000000..a1ab50c
+--- /dev/null
++++ b/Tables/dbo.Participants.sql
+@@ -0,0 +1,12 @@
++CREATE TABLE [dbo].[Participants]
++(
++[Id] [int] NOT NULL IDENTITY(1, 1),
++[EventId] [int] NOT NULL,
++[JoinedOn] [datetimeoffset] NULL,
++[Attended] [bit] NULL
++) ON [PRIMARY]
++GO
++ALTER TABLE [dbo].[Participants] ADD CONSTRAINT [PK__Particip__3214EC0707020F21] PRIMARY KEY CLUSTERED  ([Id]) ON [PRIMARY]
++GO
++ALTER TABLE [dbo].[Participants] ADD CONSTRAINT [FK_Participants_ToTable] FOREIGN KEY ([EventId]) REFERENCES [dbo].[Events] ([Id])
++GO
