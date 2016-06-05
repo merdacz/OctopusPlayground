@@ -1,7 +1,9 @@
 CREATE TABLE [dbo].[Participants]
 (
 [Id] [int] NOT NULL IDENTITY(1, 1),
-[MemberId] [int] NOT NULL,
+[MemberId] [int] NULL,
+[FirstName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LastName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [EventId] [int] NOT NULL,
 [JoinedOn] [datetimeoffset] NULL,
 [Attended] [bit] NULL
