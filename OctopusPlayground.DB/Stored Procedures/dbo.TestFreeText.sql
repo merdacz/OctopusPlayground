@@ -10,7 +10,7 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT * FROM [Events] WHERE CONTAINS([Description], @term)
+	SELECT * FROM [Events] /* WHERE CONTAINS([Description], @term) */
 END
 
 GO
