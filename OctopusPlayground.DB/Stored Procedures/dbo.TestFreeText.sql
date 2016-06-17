@@ -9,7 +9,7 @@ CREATE PROCEDURE [dbo].[TestFreeText]
 AS
 BEGIN
 	SET NOCOUNT ON;
-
+	/* some more change */
 	SELECT * FROM [Events] /* WHERE CONTAINS([Description], @term) */
 END
 
